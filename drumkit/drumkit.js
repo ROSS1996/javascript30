@@ -1,8 +1,8 @@
 let bassKeys = ['n', 'c']
 let snareKeys = ['b', 'v']
 let rimKeys = ['a']
-let ohKeys = ['x', 'm']
-let chKeys = ['z']
+let chKeys = ['x', 'm']
+let ohKeys = ['z']
 let hTomKeys = ['f', 'g']
 let lTomKeys = ['h', 'j']
 let crashKeys = ['t', 'y']
@@ -37,12 +37,12 @@ document.addEventListener("keydown", function (event) {
     if (ohKeys.indexOf(key) != -1) {
         element = document.getElementById('open')
         element.classList.toggle('playing')
-        let audio = new Audio('./sounds/closed.wav')
+        let audio = new Audio('./sounds/open.wav')
         audio.play()
     } else if (chKeys.indexOf(key) != -1) {
         element = document.getElementById('closed')
         element.classList.toggle('playing')
-        let audio = new Audio('./sounds/open.wav')
+        let audio = new Audio('./sounds/closed.wav')
         audio.play()
     }
     // Tom
