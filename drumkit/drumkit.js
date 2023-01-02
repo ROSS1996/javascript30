@@ -1,142 +1,73 @@
-let bassKeys = ['n', 'c']
-let snareKeys = ['b', 'v']
-let rimKeys = ['a']
-let chKeys = ['x', 'm']
-let ohKeys = ['z']
-let hTomKeys = ['f', 'g']
-let lTomKeys = ['h', 'j']
-let crashKeys = ['t', 'y']
-let splashKeys = ['e', 'r']
-let rideKeys = ['u']
-let bellKeys = ['i']
+let keys = {
+    'bass': ['n', 'c'],
+    'snare': ['b', 'v'],
+    'rim': ['a'],
+    'closedHH': ['x', 'm'],
+    'openHH': ['z'],
+    'highTom': ['f', 'g'],
+    'lowTom': ['h', 'j'],
+    'crash': ['t', 'y'],
+    'splash': ['e', 'r'],
+    'ride': ['u'],
+    'bell': ['i']
+}
 
-
-document.addEventListener("keydown", function (event) {
-    let key = event.key
-    key = key.toLowerCase()
+function checkInstrument(key) {
     // Bass Kick
-    if (bassKeys.indexOf(key) != -1) {
-        element = document.getElementById('bass')
-        element.classList.toggle('playing')
-        const audio = new Audio('./sounds/kick.wav')
-        audio.play()
+    if (keys.bass.indexOf(key) != -1) {
+        return 'bass'
     }
     // Snare
-    if (snareKeys.indexOf(key) != -1) {
-        element = document.getElementById('snare')
-        element.classList.toggle('playing')
-        let audio = new Audio('./sounds/snare.wav')
-        audio.play()
-    } else if (rimKeys.indexOf(key) != -1) {
-        element = document.getElementById('rim')
-        element.classList.toggle('playing')
-        let audio = new Audio('./sounds/rim.wav')
-        audio.play()
+    if (keys.snare.indexOf(key) != -1) {
+        return 'snare'
+    } else if (keys.rim.indexOf(key) != -1) {
+        return 'rim'
     }
     // High Hats
-    if (ohKeys.indexOf(key) != -1) {
-        element = document.getElementById('open')
-        element.classList.toggle('playing')
-        let audio = new Audio('./sounds/open.wav')
-        audio.play()
-    } else if (chKeys.indexOf(key) != -1) {
-        element = document.getElementById('closed')
-        element.classList.toggle('playing')
-        let audio = new Audio('./sounds/closed.wav')
-        audio.play()
+    if (keys.openHH.indexOf(key) != -1) {
+        return 'open'
+    } else if (keys.closedHH.indexOf(key) != -1) {
+        return 'closed'
     }
     // Tom
-    if (hTomKeys.indexOf(key) != -1) {
-        element = document.getElementById('hightom')
-        element.classList.toggle('playing')
-        let audio = new Audio('./sounds/hightom.wav')
-        audio.play()
-    } else if (lTomKeys.indexOf(key) != -1) {
-        element = document.getElementById('lowtom')
-        element.classList.toggle('playing')
-        let audio = new Audio('./sounds/lowtom.wav')
-        audio.play()
+    if (keys.highTom.indexOf(key) != -1) {
+        return 'hightom'
+    } else if (keys.lowTom.indexOf(key) != -1) {
+        return 'lowtom'
     }
     // Crash
-    if (crashKeys.indexOf(key) != -1) {
-        element = document.getElementById('crash')
-        element.classList.toggle('playing')
-        const audio = new Audio('./sounds/crash.wav')
-        audio.play()
+    if (keys.crash.indexOf(key) != -1) {
+        return 'crash'
     }
     // Splash
-    if (splashKeys.indexOf(key) != -1) {
-        element = document.getElementById('splash')
-        element.classList.toggle('playing')
-        const audio = new Audio('./sounds/splash.wav')
-        audio.play()
+    if (keys.splash.indexOf(key) != -1) {
+        return 'splash'
     }
     // Ride
-    if (rideKeys.indexOf(key) != -1) {
-        element = document.getElementById('ride')
-        element.classList.toggle('playing')
-        const audio = new Audio('./sounds/ride.wav')
-        audio.play()
+    if (keys.ride.indexOf(key) != -1) {
+        return 'ride'
     }
     // Bell
-    if (bellKeys.indexOf(key) != -1) {
-        element = document.getElementById('bell')
-        element.classList.toggle('playing')
-        const audio = new Audio('./sounds/bell.wav')
+    if (keys.bell.indexOf(key) != -1) {
+        return 'bell'
+    }
+    return null
+}
+
+document.addEventListener("keydown", function (event) {
+    let instrument = checkInstrument(event.key.toLowerCase())
+    let element = document.getElementById(instrument);
+    if (instrument != null) {
+        let audio = new Audio(`./sounds/${instrument}.wav`);
         audio.play()
+        element.classList.toggle('playing')
     }
 });
 
 document.addEventListener("keyup", function (event) {
-    let key = event.key
-    key = key.toLowerCase()
-    // Bass Kick
-    if (bassKeys.indexOf(key) != -1) {
-        element = document.getElementById('bass')
-        element.classList.toggle('playing')
-    }
-    // Snare
-    if (snareKeys.indexOf(key) != -1) {
-        element = document.getElementById('snare')
-        element.classList.toggle('playing')
-    } else if (rimKeys.indexOf(key) != -1) {
-        element = document.getElementById('rim')
-        element.classList.toggle('playing')
-    }
-    // High Hats
-    if (ohKeys.indexOf(key) != -1) {
-        element = document.getElementById('open')
-        element.classList.toggle('playing')
-    } else if (chKeys.indexOf(key) != -1) {
-        element = document.getElementById('closed')
-        element.classList.toggle('playing')
-    }
-    // Tom
-    if (hTomKeys.indexOf(key) != -1) {
-        element = document.getElementById('hightom')
-        element.classList.toggle('playing')
-    } else if (lTomKeys.indexOf(key) != -1) {
-        element = document.getElementById('lowtom')
-        element.classList.toggle('playing')
-    }
-    // Crash
-    if (crashKeys.indexOf(key) != -1) {
-        element = document.getElementById('crash')
-        element.classList.toggle('playing')
-    }
-    // Splash
-    if (splashKeys.indexOf(key) != -1) {
-        element = document.getElementById('splash')
-        element.classList.toggle('playing')
-    }
-    // Ride
-    if (rideKeys.indexOf(key) != -1) {
-        element = document.getElementById('ride')
-        element.classList.toggle('playing')
-    }
-    // Bell
-    if (bellKeys.indexOf(key) != -1) {
-        element = document.getElementById('bell')
+    let instrument = checkInstrument(event.key.toLowerCase())
+    let element = document.getElementById(instrument);
+    if (instrument != null) {
         element.classList.toggle('playing')
     }
 });
