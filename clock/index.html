@@ -46,6 +46,17 @@
     transform: rotate(90deg)
   }
 
+  .ball {
+    width: 5%;
+    height: 15px;
+    background: black;
+    position: absolute;
+    top: 48%;
+    left: 47.5%;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(255, 21, 21) 0px 0px 0px 2px;
+  }
+
   .hand {
     width: 50%;
     height: 6px;
@@ -59,12 +70,10 @@
     left: 16%;
   }
 
-  #minHand {
-    left: -3%;
-  }
-
   #secHand {
-    background-color: #ffd700;
+    background-color: #ff0000;
+    height: 4px;
+    top: 50%;
   }
 
 </style>
@@ -75,6 +84,7 @@
         <div class="hand hour-hand" id="hourHand"></div>
         <div class="hand min-hand" id="minHand"></div>
         <div class="hand second-hand" id="secHand"></div>
+        <div class="ball"></div>
       </div>
     </div>
 

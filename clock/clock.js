@@ -1,10 +1,10 @@
+updateClock()
+
 window.addEventListener('load', function() {
-    updateClock()
     setInterval(() => {
         updateClock()
     }, 1000);
 })
-
 
 function updateClock() {
     // Date Time
