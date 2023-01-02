@@ -76,6 +76,30 @@
     top: 50%;
   }
 
+  .digital {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: 31%;
+    top: 20%;
+    background-color: rgb(247, 247, 247);
+    border: 2px solid black;
+    padding: 7px;
+    width: fit-content;
+    gap: 2px;
+    justify-content: center;
+    align-items: center;
+    box-shadow:
+    0 0 0 4px rgba(0,0,0,0.1),
+    inset 0 0 0 3px #EFEFEF,
+    inset 0 0 10px black,
+    0 0 10px rgba(0,0,0,0.2);
+  }
+
+  .AMPM {
+    font-size: 0.9rem;
+  }
+
 </style>
 
 <body>
@@ -85,6 +109,13 @@
         <div class="hand min-hand" id="minHand"></div>
         <div class="hand second-hand" id="secHand"></div>
         <div class="ball"></div>
+      </div>
+      <div class="digital">
+        <div id="digitalHrs"></div>
+        <span>:</span>
+        <div id="digitalMin"></div>
+        <span>:</span>
+        <div id="digitalSec"></div>
       </div>
     </div>
 
