@@ -28,6 +28,7 @@ for (person of inventors) {
 // Array.prototype.filter()
 // 1. Filter the list of inventors for those who were born in the 1500's
 
+// Filter creates a new array wil all the items (born) that checks true to the specified condition (born.year >= 1500 && born.year <= 1599)
 let fifteen = inventors.filter(born => born.year >= 1500 && born.year <= 1599)
 const bornDOM = document.getElementById('born')
 for (person of fifteen) {
@@ -39,6 +40,7 @@ for (person of fifteen) {
 // Array.prototype.map()
 // 2. Give us an array of the inventors first and last names
 
+// Map creates a new array with all the items formatted as a string (`${inventor.first} ${inventor.last}`)
 let names = inventors.map(inventor => `${inventor.first} ${inventor.last}`)
 const namesDOM = document.getElementById('names')
 for (person of names) {
@@ -50,6 +52,8 @@ for (person of names) {
 // Array.prototype.sort()
 // 3. Sort the inventors by birthdate, oldest to youngest
 
+// Sort creates a new sorted array taking 2 arguments: a and b.
+// If 'a' (x's inventor.year) is bigger than 'b' (y's inventor.year), return 1 ('a' comes before 'b'), else return -1 ('a' comes after 'b').
 let ages = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
 const agesDOM = document.getElementById('ages')
 for (person of ages) {
@@ -60,12 +64,16 @@ for (person of ages) {
 
 // Array.prototype.reduce()
 // 4. How many years did all the inventors live all together?
+
+// Reduce returns a sum. It takes a initial value (in that case 0), an accumulator (total) and a value that will be incremented to accumulator (current)
 let allYears = inventors.reduce((total, current) => { return total + (current.passed - current.year) }, 0);
 const allYrsDOM = document.getElementById('allYears')
 allYrsDOM.innerText = allYears
 
 // 5. Sort the inventors by years lived
 
+// Sort creates a new sorted array taking 2 arguments: a and b.
+// If 'a' (x Inventor's year passed - year born) is small than 'b' (y Inventor's year passed - year born), return 1 ('a' comes before 'b'), else return -1 ('a' comes after 'b').
 let lived = inventors.sort((a, b) => (a.passed - a.year) < (b.passed - b.year) ? 1 : -1);
 const livedDOM = document.getElementById('lived')
 for (person of lived) {
@@ -86,6 +94,7 @@ const boulevards = [
     "Boulevard Voltaire", "Boulevard de la Zone"
 ]
 
+// Filter creates a new array wil all the items that checks true to the specified condition (name includes 'de)
 let boulevardsList = boulevards.filter(name => name.includes('de'));
 const boulevardDOM = document.getElementById('boulevards')
 for (boulevard of boulevardsList) {
@@ -105,6 +114,7 @@ const people = [
     'Billings, Josh', 'Birrell, Augustine', 'Blair, Tony', 'Beecher, Henry', 'Biondo, Frank'
 ];
 
+// By default, sort uses the alphabet order to sort the names.
 let sorted = people.sort()
 const peopleDOM = document.getElementById('people')
 for (person of sorted) {
@@ -116,6 +126,11 @@ for (person of sorted) {
 // 8. Reduce Exercise
 // Sum up the instances of each of these
 const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
+
+// In that example, reduce receives an (empty) object as an accumulator.
+// It then loops through each string in the array and check whether the accumulator object has a key with that string defined.
+// If the key is not defined, add a new key with the value of 1. If it does, increment that key's value.
+// When the loop finishes, return the accumulator object (vehicle) with all the keys and values.
 let vehicles = data.reduce((vehicle, quantity) => { vehicle[quantity] === undefined ? vehicle[quantity] = 1 : vehicle[quantity]++ ; return vehicle  }, {} )
 const vehiclesDOM = document.getElementById('vehicles')
 

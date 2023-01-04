@@ -26,7 +26,7 @@
       .borderL {
         border-left: 1px solid black;
       }
-      .formated {
+      .formatted {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -39,7 +39,7 @@
     <div class="row">
       <div>
         <h2>List of Inventors</h2>
-         <ul class='formated' id="inventors"></ul>
+        <ul class="formatted" id="inventors"></ul>
       </div>
       <div class="borderL">
         <h2>JS Code</h2>
@@ -70,84 +70,95 @@ for (person of inventors) {
         </pre>
       </div>
     </div>
-  <div class="row">
-    <div>
-      <h2>Inventors born in the 1500s</h2>
-       <ul class='formated' id="born"></ul>
-    </div>
-    <div class="borderL">
-      <h2>JS Code</h2>
-      <pre class="code">
+    <div class="row">
+      <div>
+        <h2>Inventors born in the 1500s</h2>
+        <ul class="formatted" id="born"></ul>
+      </div>
+      <div class="borderL">
+        <h2>JS Code</h2>
+        <pre class="code">
         <code class="language-javascript">
+// Filter creates a new array wil all the items (born) that checks true to the specified condition (born.year >= 1500 && born.year <= 1599)
 let fifteen = inventors.filter(born => born.year >= 1500 && born.year <= 1599)
       </code>
       </pre>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div>
-      <h2>Inventors names</h2>
-       <ul class='formated' id="names"></ul>
-    </div>
-    <div class="borderL">
-      <h2>JS Code</h2>
-      <pre class="code">
+    <div class="row">
+      <div>
+        <h2>Inventors names</h2>
+        <ul class="formatted" id="names"></ul>
+      </div>
+      <div class="borderL">
+        <h2>JS Code</h2>
+        <pre class="code">
         <code class="language-javascript">
+// Map creates a new array with all the items formatted as a string (`${inventor.first} ${inventor.last}`)
 let names = inventors.map(inventor => `${inventor.first} ${inventor.last}`)
       </code>
       </pre>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div>
-      <h2>Oldest to youngest</h2>
-       <ul class='formated' id="ages"></ul>
-    </div>
-    <div class="borderL">
-      <h2>JS Code</h2>
-      <pre class="code">
+    <div class="row">
+      <div>
+        <h2>Oldest to youngest</h2>
+        <ul class="formatted" id="ages"></ul>
+      </div>
+      <div class="borderL">
+        <h2>JS Code</h2>
+        <pre class="code">
         <code class="language-javascript">
+
+// Sort creates a new sorted array taking 2 arguments: a and b.
+// If 'a' (x's inventor.year) is bigger than 'b' (y's inventor.year), return 1 ('a' comes before 'b'), else return -1 ('a' comes after 'b').
 let ages = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
       </code>
       </pre>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div>
-      <h2>Sum of all years</h2>
-      <p style="padding-left: 15px; text-align: left">The sum of years all inventor live is <span id="allYears"></span> years</p>
-    </div>
-    <div class="borderL">
-      <h2>JS Code</h2>
-      <pre class="code">
+    <div class="row">
+      <div>
+        <h2>Sum of all years</h2>
+        <p style="padding-left: 15px; text-align: left">
+          The sum of years all inventor live is
+          <span id="allYears"></span> years
+        </p>
+      </div>
+      <div class="borderL">
+        <h2>JS Code</h2>
+        <pre class="code">
         <code class="language-javascript">
+// Reduce returns a sum. It takes a initial value (in that case 0), an accumulator (total) and a value that will be incremented to accumulator (current)
 let  allYears = inventors.reduce((total, current) => {return total + (current.passed - current.year)}, 0);
       </code>
       </pre>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div>
-      <h2>Years lived</h2>
-       <ul class='formated' id="lived"></ul>
-    </div>
-    <div class="borderL">
-      <h2>JS Code</h2>
-      <pre class="code">
+    <div class="row">
+      <div>
+        <h2>Years lived</h2>
+        <ul class="formatted" id="lived"></ul>
+      </div>
+      <div class="borderL">
+        <h2>JS Code</h2>
+        <pre class="code">
         <code class="language-javascript">
+// Sort creates a new sorted array taking 2 arguments: a and b.
+// If 'a' (x Inventor's year passed - year born) is small than 'b' (y Inventor's year passed - year born), return 1 ('a' comes before 'b'), else return -1 ('a' comes after 'b').
 let lived = inventors.sort((a, b) => (a.passed - a.year) < (b.passed - b.year) ? 1: -1);
       </code>
       </pre>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div>
-      <h2>Boulevards in Paris containing 'de'</h2>
-       <ul class='formated' id="boulevards"></ul>
-    </div>
-    <div class="borderL">
-      <h2>JS Code</h2>
-      <pre class="code">
+    <div class="row">
+      <div>
+        <h2>Boulevards in Paris containing 'de'</h2>
+        <ul class="formatted" id="boulevards"></ul>
+      </div>
+      <div class="borderL">
+        <h2>JS Code</h2>
+        <pre class="code">
         <code class="language-javascript">
 const boulevards = [
   "Boulevards of Paris", "City walls of Paris", "Thiers wall", "Wall of Charles V", "Wall of Philip II Augustus", "City gates of Paris", "Haussmann's renovation of Paris",
@@ -159,19 +170,20 @@ const boulevards = [
   "Boulevard Voltaire", "Boulevard de la Zone"
 ]
 
+// Filter creates a new array wil all the items that checks true to the specified condition (name includes 'de)
 let boulevardsList = boulevards.filter(name => name.includes('de'));
       </code>
       </pre>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div>
-      <h2>Sort alphabeltically by last name</h2>
-      <ol id="people" style="  column-count: 3"></ol>
-    </div>
-    <div class="borderL">
-      <h2>JS Code</h2>
-      <pre class="code">
+    <div class="row">
+      <div>
+        <h2>Sort alphabeltically by last name</h2>
+        <ol id="people" style="column-count: 3"></ol>
+      </div>
+      <div class="borderL">
+        <h2>JS Code</h2>
+        <pre class="code">
         <code class="language-javascript">
 const people = [
   'Bernhard, Sandra', 'Bethea, Erin', 'Becker, Carl', 'Bentsen, Lloyd', 'Beckett, Samuel', 'Blake, William', 'Berger, Ric', 'Beddoes, Mick', 'Beethoven, Ludwig',
@@ -181,24 +193,30 @@ const people = [
   'Billings, Josh', 'Birrell, Augustine', 'Blair, Tony', 'Beecher, Henry', 'Biondo, Frank'
 ];
 
+// By default, sort uses the alphabet order to sort the names.
 let sorted = people.sort()
       </code>
       </pre>
+      </div>
     </div>
-  </div>
     <div class="row">
       <div>
         <h2>Sum repetitions</h2>
-         <ul class='formated' id="vehicles"></ul>
+        <ul class="formatted" id="vehicles"></ul>
       </div>
       <div class="borderL">
         <h2>JS Code</h2>
         <pre class="code">
           <code class="language-javascript">
 const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
-let vehicles = data.reduce((vehicle, quantity) => { vehicle[quantity] === undefined ? vehicle[quantity] = 0 : vehicle[quantity]++ ; return vehicle  }, {} )
-const vehiclesDOM = document.getElementById('vehicles')
 
+// In that example, reduce receives an (empty) object as an accumulator.
+// It then loops through each string in the array and check whether the accumulator object has a key with that string defined.
+// If the key is not defined, add a new key with the value of 1. If it does, increment that key's value.
+// When the loop finishes, return the accumulator object (vehicle) with all the keys and values.
+let vehicles = data.reduce((vehicle, quantity) => { vehicle[quantity] === undefined ? vehicle[quantity] = 0 : vehicle[quantity]++ ; return vehicle  }, {} )
+
+const vehiclesDOM = document.getElementById('vehicles')
 for (const [vehicle, quantity] of Object.entries(vehicles)) {
     let info = document.createElement('li')
     info.innerText = `${vehicle}: ${quantity}`
@@ -207,8 +225,7 @@ for (const [vehicle, quantity] of Object.entries(vehicles)) {
         </code>
         </pre>
       </div>
-  </div>
-  </div>
+    </div>
     <script src="script.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script>
