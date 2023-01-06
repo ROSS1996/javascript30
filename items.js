@@ -5,7 +5,7 @@ let challenges =
         { name: "CSS Variables", complete: "03/01/2023", folder: "variables" },
         { name: "Array Cardio Day 1", complete: "04/01/2023", folder: "arraycardio" },
         { name: "Flex Panel Gallery" },
-        { name: "Type Ahead" },
+        { name: "Type Ahead", complete: "06/01/2023", folder: "typeahead" },
         { name: "Array Cardio Day 2" },
         { name: "Fun with HTML5 Canvas" },
         { name: "Dev Tools Domination" },
