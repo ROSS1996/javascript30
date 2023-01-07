@@ -6,7 +6,7 @@ let challenges =
         { name: "Array Cardio Day 1", complete: "04/01/2023", folder: "arraycardio" },
         { name: "Flex Panel Gallery" },
         { name: "Type Ahead", complete: "06/01/2023", folder: "typeahead" },
-        { name: "Array Cardio Day 2" },
+        { name: "Array Cardio Day 2", complete: "07/01/2023", folder: "arraycardio2" },
         { name: "Fun with HTML5 Canvas" },
         { name: "Dev Tools Domination" },
         { name: "Hold Shift and Check Checkboxes" },
