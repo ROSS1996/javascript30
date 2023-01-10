@@ -8,7 +8,7 @@ let challenges =
         { name: "Type Ahead", complete: "06/01/2023", folder: "typeahead" },
         { name: "Array Cardio Day 2", complete: "07/01/2023", folder: "arraycardio2" },
         { name: "Fun with HTML5 Canvas" },
-        { name: "Dev Tools Domination" },
+        { name: "Dev Tools Domination", complete: "10/01/2023", folder: "devtools" },
         { name: "Hold Shift and Check Checkboxes" },
         { name: "Custom Video Player" },
         { name: "Key Sequence Detection" },
