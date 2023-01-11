@@ -9,7 +9,7 @@ let challenges =
         { name: "Array Cardio Day 2", complete: "07/01/2023", folder: "arraycardio2" },
         { name: "Fun with HTML5 Canvas" },
         { name: "Dev Tools Domination", complete: "10/01/2023", folder: "devtools" },
-        { name: "Hold Shift and Check Checkboxes" },
+        { name: "Hold Shift and Check Checkboxes", complete: "11/01/2023", folder: "checkboxes" },
         { name: "Custom Video Player" },
         { name: "Key Sequence Detection" },
         { name: "Slide in on Scroll" },
