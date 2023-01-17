@@ -1,17 +1,17 @@
 let challenges =
     [
-        { name: "JavaScript Drum Kit", complete: "01/01/2023", folder: "drumkit" },
-        { name: "JS and CSS Clock", complete: "02/01/2023", folder: "clock" },
-        { name: "CSS Variables", complete: "03/01/2023", folder: "variables" },
-        { name: "Array Cardio Day 1", complete: "04/01/2023", folder: "arraycardio" },
+        { name: "JavaScript Drum Kit", folder: "drumkit" },
+        { name: "JS and CSS Clock", folder: "clock" },
+        { name: "CSS Variables", folder: "variables" },
+        { name: "Array Cardio Day 1", folder: "arraycardio" },
         { name: "Flex Panel Gallery" },
-        { name: "Type Ahead", complete: "06/01/2023", folder: "typeahead" },
-        { name: "Array Cardio Day 2", complete: "07/01/2023", folder: "arraycardio2" },
+        { name: "Type Ahead", folder: "typeahead" },
+        { name: "Array Cardio Day 2", folder: "arraycardio2" },
         { name: "Fun with HTML5 Canvas" },
-        { name: "Dev Tools Domination", complete: "10/01/2023", folder: "devtools" },
-        { name: "Hold Shift and Check Checkboxes", complete: "11/01/2023", folder: "checkboxes" },
+        { name: "Dev Tools Domination", folder: "devtools" },
+        { name: "Hold Shift and Check Checkboxes", folder: "checkboxes" },
         { name: "Custom Video Player" },
-        { name: "Key Sequence Detection" },
+        { name: "Key Sequence Detection", folder: "keydetect" },
         { name: "Slide in on Scroll" },
         { name: "JavaScript References VS Copying" },
         { name: "LocalStorage" },
@@ -43,11 +43,6 @@ for (challenge of challenges) {
         li.appendChild(a)
     } else {
         li.innerText = challenge.name
-    }
-    if (challenge.complete) {
-        let span = document.createElement('span')
-        span.innerText = ` - ${challenge.complete}`
-        li.appendChild(span)
     }
     list.appendChild(li)
 }

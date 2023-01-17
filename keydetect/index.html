@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Key Detection</title>
+  </head>
+  <body>
+    <h1>Open the console</h1>
+    <script>
+      let keys = [];
+      document.addEventListener("keydown", function (event) {
+        if (keys.length >= 6) {
+          keys.shift();
+        }
+        keys.push(event.key);
+        console.log(keys);
+      });
+    </script>
+  </body>
+</html>
